@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dime.monesterio" >
+
+    <application
+        android:allowBackup="true"
+        android:name=".MonesterioAplicacion"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.modulos.libreria.dimepoblacioneslibreria.actividades.InicioActivity"
+            android:label="@string/title_activity_inicio" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/ic_action_notificacion"/>
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver android:name="com.modulos.libreria.dimepoblacioneslibreria.pushreceiver.PushParseReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!--
+                  IMPORTANT: Change "com.parse.starter" to match your app's package name.
+                -->
+                <category android:name="com.dime.monesterio" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
