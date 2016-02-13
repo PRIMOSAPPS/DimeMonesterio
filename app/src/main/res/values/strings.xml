@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">DimeMonesterio</string>
-    <string name="title_activity_monesterio">MonesterioActivity</string>
+    <string name="app_name">MonesterioApp</string>
+    <string name="title_activity_monesterio">Monesterio App</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Preferencias</string>
 
 </resources>
