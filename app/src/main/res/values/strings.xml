@@ -4,5 +4,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Preferencias</string>
+    <string name="title_activity_monesterio_lista_sitios">MonesterioListaSitiosActivity</string>
+    <string name="title_activity_monesterio_detalle_sitio">MonesterioDetalleSitioActivity</string>
+    <string name="title_activity_monesterio_inicio">MonesterioInicioActivity</string>
 
 </resources>

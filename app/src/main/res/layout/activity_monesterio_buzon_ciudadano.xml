@@ -1,0 +1,285 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/buzonCiudadanoDrawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="left">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:configChanges="orientation"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:screenOrientation="portrait"
+        tools:context=".actividades.MonesterioBuzonCiudadanoActivity">
+
+        <TextView
+            android:id="@+id/libCiuDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/txtLibCiuDireccionNocalculada"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignParentTop="true" />
+
+        <ScrollView
+            android:id="@+id/libCiuScrollViewOpciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/libCiuDireccion"
+            android:layout_above="@+id/libCiuTextComentario"
+            >
+
+            <RadioGroup
+                android:id="@+id/libCiuRadioGroupOpciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcAlumbradoPublico"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:height="20dp"
+                    android:checked="true"
+                    android:text="@string/lblCiuOpcAlumbradoPublico" />
+
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcRecogidaResiduos"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcRecogidaResiduos" />
+
+                <RadioGroup
+                    android:id="@+id/libCiuRadioGroupOpcionesRecogidaResiduos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingLeft="20dp"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/libCiuOpcResiduosOrganicos"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/lblCiuOpcResiduosOrganicos" />
+
+                    <RadioButton
+                        android:id="@+id/libCiuOpcPapelCarton"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/lblCiuOpcPapelCarton" />
+
+                    <RadioButton
+                        android:id="@+id/libCiuOpcVidrio"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/lblCiuOpcVidrio" />
+
+                    <RadioButton
+                        android:id="@+id/libCiuOpcPlasticos"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/lblCiuOpcPlasticos" />
+
+                </RadioGroup>
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcParquesJardines"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcParquesJardines" />
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcAlcantarillado"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcAlcantarillado" />
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcAveriasAgua"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcAveriasAgua" />
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcLimpiezaViaria"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcLimpiezaViaria" />
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcSenalizacionVial_Trafico"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcSenalizacionVial_Trafico" />
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcAceradosPavimentos"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcAceradosPavimentos" />
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcFachadasPintadas"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcFachadasPintadas" />
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcMobiliarioUrbano"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcMobiliarioUrbano" />
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcionFeriasFiestas"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcFeriasFiestas" />
+
+                <RadioButton
+                    android:id="@+id/libCiuOpcionOtras"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/lblCiuOpcionOtras" />
+            </RadioGroup>
+        </ScrollView>
+
+
+        <EditText
+            android:id="@+id/libCiuTextComentario"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_orange_light"
+            android:singleLine="false"
+            android:lines="5"
+            android:visibility="gone"
+            android:editable="true"
+            android:gravity="top|left"
+            android:text=""
+            android:layout_above="@+id/libCiuHorizontalScrollMiniaturas" />
+
+
+        <HorizontalScrollView
+            android:id="@+id/libCiuHorizontalScrollMiniaturas"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/layouttBotonesBuzonCiudadado">
+
+            <LinearLayout
+                android:id="@+id/libCiudLinearGallery"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/libCiuViewPager"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="#ea0e45fa"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/barraProgreso"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/layouttBotonesBuzonCiudadado"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/black"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/monesterioBuzonCiudadanoSacarFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@null"
+                    android:onClick="sacarFoto"
+                    android:src="@mipmap/colaboracion_ciudadana_foto" />
+
+                <ImageButton
+                    android:id="@+id/monesterioBuzonCiudadanoEnviarFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:layout_gravity="right"
+                    android:onClick="enviar"
+                    android:src="@mipmap/colaboracion_ciudadana_enviar" />
+            </TableRow>
+        </TableLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/buzonCiudadanoLinearLayoutMenuLateral"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/opcion_menu_lateral"
+            android:src="@drawable/img_sup_menulateral" />
+
+        <ListView
+            android:id="@+id/listMenuLateral"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/opcion_menu_lateral"
+            android:choiceMode="singleChoice"
+            android:divider="@color/separador_menu_lateral"
+            android:dividerHeight="2dp" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

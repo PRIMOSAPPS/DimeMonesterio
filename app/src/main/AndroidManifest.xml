@@ -1,32 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dime.monesterio" >
+    package="com.dime.monesterio">
 
     <application
-        android:allowBackup="true"
         android:name=".MonesterioAplicacion"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name="com.modulos.libreria.dimepoblacioneslibreria.actividades.InicioActivity"
-            android:label="@string/title_activity_monesterio"
-            tools:replace="android:label"
-            android:icon="@mipmap/ic_launcher">
+            android:name=".actividades.MonesterioInicioActivity"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/title_activity_monesterio">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".actividades.MonesterioMainActivity"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/title_activity_monesterio" />
+        <activity
+            android:name=".actividades.MonesterioStreamPlayerActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_stream_player"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actividades.MonesterioBuzonCiudadanoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_buzon_ciudadano"
+            android:screenOrientation="portrait"
+            tools:replace="android:label" />
+        <activity
+            android:name=".actividades.MonesterioListaSitiosActivity"
+            android:label="@string/title_activity_monesterio_lista_sitios"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.modulos.libreria.dimepoblacioneslibreria.actividades.ListaSitiosActivity" />
+        </activity>
+        <activity
+            android:name=".actividades.detalle.MonesterioDetalleSitioActivity"
+            android:label="@string/title_activity_monesterio_detalle_sitio"
+            android:parentActivityName="com.modulos.libreria.dimepoblacioneslibreria.actividades.detalle.DetalleSitioActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.modulos.libreria.dimepoblacioneslibreria.actividades.detalle.DetalleSitioActivity" />
+        </activity>
+        <activity android:name=".actividades.MonesterioListaNotificacionesActivity" />
+        <activity android:name=".actividades.detalle.MonesterioDetalleNotificacionActivity"/>
 
-        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/ic_action_notificacion"/>
+        <meta-data
+            android:name="com.parse.push.notification_icon"
+            android:resource="@drawable/ic_action_notificacion" />
 
         <service android:name="com.parse.PushService" />
 
-        <receiver android:name="com.modulos.libreria.dimepoblacioneslibreria.pushreceiver.PushParseReceiver"
+        <receiver
+            android:name="com.dime.monesterio.pushreceiver.MonesterioPushParseReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.parse.push.intent.RECEIVE" />
@@ -34,15 +71,14 @@
                 <action android:name="com.parse.push.intent.OPEN" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.parse.GcmBroadcastReceiver"
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <!--
-                  IMPORTANT: Change "com.parse.starter" to match your app's package name.
-                -->
+                <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
                 <category android:name="com.dime.monesterio" />
             </intent-filter>
         </receiver>
