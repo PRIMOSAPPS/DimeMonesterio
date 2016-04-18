@@ -24,8 +24,8 @@ android {
 dependencies {
     compile 'com.modulos.libreria:utilidadeslibreria:1.0.0@aar'
     compile 'com.google.android.gms:play-services:8.4.0'
-    compile 'com.modulos.libreria:buzonciudadanolibreria:1.0.0@aar'
     compile 'com.modulos.libreria:dimepoblacioneslibreria:1.0.0@aar'
+    compile 'com.modulos.libreria:buzonciudadanolibreria:1.0.0@aar'
     compile 'com.modulos.libreria:listadodetallelibreria:1.0.0@aar'
     compile 'com.modulos.libreria:mapalibreria:1.0.0@aar'
     compile 'com.modulos.libreria:parselibreria:1.0.0@aar'

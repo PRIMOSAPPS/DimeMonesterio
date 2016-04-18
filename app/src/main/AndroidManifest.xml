@@ -24,6 +24,7 @@
         <activity
             android:name=".actividades.MonesterioMainActivity"
             android:icon="@mipmap/ic_launcher"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_monesterio" />
         <activity
             android:name=".actividades.MonesterioStreamPlayerActivity"
@@ -53,8 +54,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.modulos.libreria.dimepoblacioneslibreria.actividades.detalle.DetalleSitioActivity" />
         </activity>
-        <activity android:name=".actividades.MonesterioListaNotificacionesActivity" />
-        <activity android:name=".actividades.detalle.MonesterioDetalleNotificacionActivity"/>
+        <activity android:name=".actividades.MonesterioListaNotificacionesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".actividades.detalle.MonesterioDetalleNotificacionActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="com.parse.push.notification_icon"

@@ -6,6 +6,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.ViewSwitcher;
 
 import com.dime.monesterio.R;
@@ -37,10 +38,22 @@ public class ControlSlider {
     public void initSlider() {
         imageSwitcher = (ImageSwitcher) actividad.findViewById(com.modulos.libreria.dimepoblacioneslibreria.R.id.imageSlider);
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+            @Override
+            public View makeView() {
+                ImageView myView = new ImageView(actividad);
+                myView.setScaleType(ImageView.ScaleType.FIT_XY);
+                myView.setLayoutParams(new ImageSwitcher.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
+                        RelativeLayout.LayoutParams.MATCH_PARENT));
+                return myView;
+            }
+        });
+        /*
+        imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
             public View makeView() {
                 return new ImageView(actividad);
             }
         });
+        */
 
         // Set animations
         // https://danielme.com/2013/08/18/diseno-android-transiciones-entre-activities/

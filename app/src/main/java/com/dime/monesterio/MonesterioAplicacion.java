@@ -17,7 +17,6 @@ public class MonesterioAplicacion extends DimeApplication {
         Log.d(TAG, "onCreate()");
         SingletonDimePoblaciones.getInstance().setIdIconoNotificacion(R.drawable.ic_action_notificacion);
         SingletonDimePoblaciones.getInstance().setIdLogoPoblacion(R.drawable.escudo_monesterio_logo);
-        SingletonDimePoblaciones.getInstance().setIdLogoPoblacion(R.drawable.escudo_monesterio_logo);
-        SingletonDimePoblaciones.getInstance().setIdLogoPoblacion(R.drawable.escudo_monesterio_logo);
+        SingletonDimePoblaciones.getInstance().setIdIconoListaSitios(com.modulos.libreria.dimepoblacioneslibreria.R.mipmap.puntos_de_interes);
     }
 }
