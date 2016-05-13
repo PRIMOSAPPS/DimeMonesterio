@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MonesterioApp</string>
+    <string name="app_name">Monesterio</string>
     <string name="title_activity_monesterio">Monesterio App</string>
 
     <string name="hello_world">Hello world!</string>

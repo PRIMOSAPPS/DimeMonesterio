@@ -3,6 +3,7 @@ package com.dime.monesterio.util;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 import com.dime.monesterio.R;
 import com.dime.monesterio.menulateral.ConfigMenuLateral;
@@ -50,8 +51,11 @@ public class ConfigMenuLateral_ActionBar {
         ActionBar actionBar = actividad.getSupportActionBar();
         if(actionBar != null) {
             View customActionBarView = actividad.getLayoutInflater().inflate(com.modulos.libreria.dimepoblacioneslibreria.R.layout.action_bar_custom, null);
+            TextView textoActionBar = (TextView)customActionBarView.findViewById(com.modulos.libreria.dimepoblacioneslibreria.R.id.textoActionBar);
+            textoActionBar.setText(R.string.app_name);
             actionBar.setCustomView(customActionBarView);
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+
         }
     }
 

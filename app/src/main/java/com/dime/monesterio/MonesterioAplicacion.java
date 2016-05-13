@@ -2,6 +2,7 @@ package com.dime.monesterio;
 
 import android.util.Log;
 
+import com.modulos.libreria.buzonciudadanolibreria.util.UtilPropiedadesBuzonCiudadano;
 import com.modulos.libreria.dimepoblacioneslibreria.aplicacion.DimeApplication;
 import com.modulos.libreria.dimepoblacioneslibreria.singleton.SingletonDimePoblaciones;
 

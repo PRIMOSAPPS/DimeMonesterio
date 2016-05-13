@@ -1,14 +1,12 @@
 package com.dime.monesterio.actividades.detalle;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.view.Window;
 
 import com.dime.monesterio.R;
 import com.dime.monesterio.util.ConfigMenuLateral_ActionBar;
 import com.modulos.libreria.dimepoblacioneslibreria.actividades.detalle.DetalleSitioActivity;
-import com.modulos.libreria.utilidadeslibreria.menulateral.ConfigMenuLateralFactory;
 import com.modulos.libreria.utilidadeslibreria.menulateral.ControlMenuLateral;
 
 public class MonesterioDetalleSitioActivity extends DetalleSitioActivity {
