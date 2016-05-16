@@ -14,6 +14,7 @@ import com.dime.monesterio.actividades.MonesterioListaNotificacionesActivity;
 import com.dime.monesterio.actividades.MonesterioListaSitiosActivity;
 import com.dime.monesterio.actividades.MonesterioStreamPlayerActivity;
 import com.modulos.libreria.buzonciudadanolibreria.BuzonCiudadanoActivity;
+import com.modulos.libreria.dimepoblacioneslibreria.actualizador.AsyncTaskActualizador;
 import com.modulos.libreria.dimepoblacioneslibreria.adaptadores.MenuLateralAdaptador;
 import com.modulos.libreria.dimepoblacioneslibreria.constantes.Constantes;
 import com.modulos.libreria.dimepoblacioneslibreria.util.Propiedades;

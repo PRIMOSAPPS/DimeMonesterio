@@ -14,6 +14,7 @@ import com.dime.monesterio.util.ConfigMenuLateral_ActionBar;
 import com.dime.monesterio.util.ControlActionBar;
 import com.modulos.libreria.dimepoblacioneslibreria.actividades.ListaSitiosActivity;
 import com.modulos.libreria.dimepoblacioneslibreria.actividades.PreferenciasActivity;
+import com.modulos.libreria.dimepoblacioneslibreria.actualizador.AsyncTaskActualizador;
 import com.modulos.libreria.dimepoblacioneslibreria.dto.SitioDTO;
 import com.modulos.libreria.utilidadeslibreria.menulateral.ConfigMenuLateralFactory;
 import com.modulos.libreria.utilidadeslibreria.menulateral.ControlMenuLateral;
@@ -37,6 +38,8 @@ public class MonesterioListaSitiosActivity extends ListaSitiosActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        AsyncTaskActualizador task = new AsyncTaskActualizador(this, true);
+        task.execute((Void) null);
         return controlActionBar.onOptionsItemSelected(this, item);
     }
 

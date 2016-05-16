@@ -3,18 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.dime.monesterio">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:name=".MonesterioAplicacion"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
+
         <activity
             android:name=".actividades.MonesterioInicioActivity"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/title_activity_monesterio">
-            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -63,8 +68,36 @@
             android:name="com.parse.push.notification_icon"
             android:resource="@drawable/ic_action_notificacion" />
 
+        <!--
         <service android:name="com.parse.PushService" />
+        -->
 
+        <service
+            android:name=".service.MonesterioServicioComprobadorActualizaciones"
+            android:enabled="true"
+            android:icon="@drawable/ic_action_notificacion"
+            android:label="@string/nombre_servicio_actualizador"/>
+
+        <receiver
+            android:name=".receiver.MonesterioComprobadorActualizacionesBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.ConexionComprobadorBroadcastReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+            </intent-filter>
+        </receiver>
+        <!--
         <receiver
             android:name="com.dime.monesterio.pushreceiver.MonesterioPushParseReceiver"
             android:exported="false">
@@ -74,6 +107,8 @@
                 <action android:name="com.parse.push.intent.OPEN" />
             </intent-filter>
         </receiver>
+        -->
+        <!--
         <receiver
             android:name="com.parse.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -81,10 +116,10 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
                 <category android:name="com.dime.monesterio" />
             </intent-filter>
         </receiver>
+        -->
 
     </application>
 

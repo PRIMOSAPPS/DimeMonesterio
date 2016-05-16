@@ -14,4 +14,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <string name="nombre_servicio_actualizador">Servicio de notificación de actualización de datos pendiente</string>
+    <string name="nombre_servicio_actualizador_conexion">Servicio de notificación de actualización de datos pendientes al cambiar el estado de la conexion</string>
+
 </resources>
