@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId 'com.dime.monesterio'
         minSdkVersion 15
-        targetSdkVersion 22
+        targetSdkVersion 23
         versionCode 4
         versionName "1.0.4"
     }

@@ -68,9 +68,7 @@
             android:name="com.parse.push.notification_icon"
             android:resource="@drawable/ic_action_notificacion" />
 
-        <!--
         <service android:name="com.parse.PushService" />
-        -->
 
         <service
             android:name=".service.MonesterioServicioComprobadorActualizaciones"
@@ -97,7 +95,6 @@
 
             </intent-filter>
         </receiver>
-        <!--
         <receiver
             android:name="com.dime.monesterio.pushreceiver.MonesterioPushParseReceiver"
             android:exported="false">
@@ -107,8 +104,7 @@
                 <action android:name="com.parse.push.intent.OPEN" />
             </intent-filter>
         </receiver>
-        -->
-        <!--
+
         <receiver
             android:name="com.parse.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -119,7 +115,6 @@
                 <category android:name="com.dime.monesterio" />
             </intent-filter>
         </receiver>
-        -->
 
     </application>
 
