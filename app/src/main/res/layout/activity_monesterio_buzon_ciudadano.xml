@@ -9,6 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@null"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:configChanges="orientation"
         android:screenOrientation="portrait"
         tools:context=".actividades.MonesterioBuzonCiudadanoActivity">
@@ -25,7 +27,7 @@
             android:text="@string/txtLibCiuDireccionNocalculada"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:padding="@dimen/activity_vertical_margin"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentTop="true"/>
 
         <ScrollView
             android:id="@+id/libCiuScrollViewOpciones"
@@ -48,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:height="20dp"
                     android:checked="true"
-                    android:text="@string/lblCiuOpcAlumbradoPublico" />
+                    android:text="@string/lblCiuOpcAlumbradoPublico"/>
 
 
                 <RadioButton
@@ -176,9 +178,10 @@
             android:background="@android:color/holo_orange_light"
             android:singleLine="false"
             android:lines="5"
-            android:visibility="gone"
             android:editable="true"
             android:gravity="top|left"
+            android:nextFocusUp="@id/libCiuTextComentario"
+            android:nextFocusLeft="@id/libCiuTextComentario"
             android:text=""
             android:layout_above="@+id/libCiuHorizontalScrollMiniaturas" />
 
