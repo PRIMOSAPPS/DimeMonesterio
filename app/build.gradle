@@ -26,10 +26,10 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.modulos.libreria:utilidadeslibreria:1.0.4@aar'
-    compile 'com.modulos.libreria:dimepoblacioneslibreria:1.0.4@aar'
-    compile 'com.modulos.libreria:buzonciudadanolibreria:1.0.4@aar'
-    compile 'com.modulos.libreria:listadodetallelibreria:1.0.4@aar'
-    compile 'com.modulos.libreria:parselibreria:1.0.4@aar'
-    compile 'com.modulos.libreria:radiolibreria:1.0.4@aar'
+    compile 'com.modulos.libreria:utilidadeslibreria:1.0.5@aar'
+    compile 'com.modulos.libreria:dimepoblacioneslibreria:1.0.5@aar'
+    compile 'com.modulos.libreria:buzonciudadanolibreria:1.0.5@aar'
+    compile 'com.modulos.libreria:listadodetallelibreria:1.0.5@aar'
+    compile 'com.modulos.libreria:parselibreria:1.0.5@aar'
+    compile 'com.modulos.libreria:radiolibreria:1.0.5@aar'
 }
