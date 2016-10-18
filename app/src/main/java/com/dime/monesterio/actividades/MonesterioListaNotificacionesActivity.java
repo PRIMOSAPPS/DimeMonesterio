@@ -13,7 +13,10 @@ import com.dime.monesterio.util.ConfigMenuLateral_ActionBar;
 import com.dime.monesterio.util.ControlActionBar;
 import com.modulos.libreria.dimepoblacioneslibreria.actividades.ListaNotificacionesActivity;
 import com.modulos.libreria.dimepoblacioneslibreria.actividades.PreferenciasActivity;
+import com.modulos.libreria.dimepoblacioneslibreria.adaptadores.NotificacionAdaptador;
+import com.modulos.libreria.dimepoblacioneslibreria.adaptadores.SitioAdaptador;
 import com.modulos.libreria.dimepoblacioneslibreria.dto.NotificacionDTO;
+import com.modulos.libreria.dimepoblacioneslibreria.dto.SitioDTO;
 import com.modulos.libreria.utilidadeslibreria.menulateral.ControlMenuLateral;
 
 public class MonesterioListaNotificacionesActivity extends ListaNotificacionesActivity {
@@ -60,7 +63,8 @@ public class MonesterioListaNotificacionesActivity extends ListaNotificacionesAc
 
 
     public void mostrarDetalle(View view) {
-        NotificacionDTO notificacion = (NotificacionDTO)view.getTag();
+        NotificacionAdaptador.ViewHolder viewHolder = (NotificacionAdaptador.ViewHolder)view.getTag();
+        NotificacionDTO notificacion = viewHolder.getNotificacion();
 
         Intent intent = new Intent(this, MonesterioDetalleNotificacionActivity.class);
         intent.putExtra(MonesterioDetalleNotificacionActivity.ID_NOTIFICACION, notificacion.getId());

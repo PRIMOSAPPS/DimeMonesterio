@@ -20,6 +20,7 @@ public class MonesterioActualizadorContenidoBroadcastReceiver extends BroadcastR
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        if(true) return;
         SharedPreferences ratePrefs = PreferenceManager
                 .getDefaultSharedPreferences(context);
         SharedPreferences.Editor edit = ratePrefs.edit();

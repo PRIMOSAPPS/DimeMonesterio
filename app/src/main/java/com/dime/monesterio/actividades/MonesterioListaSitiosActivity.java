@@ -15,6 +15,7 @@ import com.dime.monesterio.util.ControlActionBar;
 import com.modulos.libreria.dimepoblacioneslibreria.actividades.ListaSitiosActivity;
 import com.modulos.libreria.dimepoblacioneslibreria.actividades.PreferenciasActivity;
 import com.modulos.libreria.dimepoblacioneslibreria.actualizador.AsyncTaskActualizador;
+import com.modulos.libreria.dimepoblacioneslibreria.adaptadores.SitioAdaptador;
 import com.modulos.libreria.dimepoblacioneslibreria.dto.SitioDTO;
 import com.modulos.libreria.utilidadeslibreria.menulateral.ConfigMenuLateralFactory;
 import com.modulos.libreria.utilidadeslibreria.menulateral.ControlMenuLateral;
@@ -64,7 +65,8 @@ public class MonesterioListaSitiosActivity extends ListaSitiosActivity {
     }
 
     public void mostrarDetalle(View view) {
-        SitioDTO sitio = (SitioDTO)view.getTag();
+        SitioAdaptador.ViewHolder viewHolder = (SitioAdaptador.ViewHolder)view.getTag();
+        SitioDTO sitio = viewHolder.getSitio();
         Intent intent = new Intent(this, MonesterioDetalleSitioActivity.class);
         intent.putExtra("idSitio", sitio.getId());
         this.startActivity(intent);
