@@ -74,16 +74,39 @@
             android:name="com.parse.push.notification_icon"
             android:resource="@drawable/ic_action_notificacion" />
 
-        <service android:name="com.parse.PushService" />
+        <!--
+        <receiver
+            android:name=".receiver.FirebaseReceiverRestarterBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RestartServiceWhenStopped">
+            <intent-filter>
+                <action android:name="uk.ac.shef.oak.ActivityRecognition.RestartSensor"/>
+            </intent-filter>
+        </receiver>
+        -->
 
+        <!--
+
+            android:stopWithTask="false"
+            android:exported="true"
+            android:process=":DimeMonesterioFirebaseService"
+
+        -->
         <service
             android:name=".service.MonesterioServicioComprobadorActualizaciones"
             android:enabled="true"
             android:icon="@drawable/ic_action_notificacion"
-            android:label="@string/nombre_servicio_actualizador"/>
+            android:label="@string/nombre_servicio_actualizador"
+
+            />
 
         <receiver
-            android:name=".receiver.MonesterioComprobadorActualizacionesBroadcastReceiver">
+            android:name=".receiver.MonesterioComprobadorActualizacionesBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RestartComprobadorNotoficacionesWhenStopped">
+
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
@@ -92,18 +115,33 @@
 
                 <data android:scheme="package" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.dime.monesterio.service.RestartComprobador"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
         </receiver>
 
-        <!--
-        <receiver
-            android:name=".receiver.MonesterioActualizadorContenidoBroadcastReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REPLACED" />
-                <action android:name="android.intent.action.PACKAGE_CHANGED" />
 
-                <data android:scheme="package" />
-            </intent-filter>
+        <!--
+    <receiver
+        android:name=".receiver.FirebaseReceiverRestarterBroadcastReceiver"
+        android:enabled="true"
+        android:exported="true"
+        android:label="RestartComprobadorNotoficacionesWhenStopped">
+
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+            <action android:name="android.intent.action.PACKAGE_ADDED" />
+            <action android:name="android.intent.action.PACKAGE_REPLACED" />
+            <action android:name="android.intent.action.PACKAGE_CHANGED" />
+
+            <data android:scheme="package" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="com.dime.monesterio.service.RestartFirebase"/>
+        </intent-filter>
         </receiver>
         -->
 
@@ -115,26 +153,19 @@
 
             </intent-filter>
         </receiver>
-        <receiver
-            android:name="com.dime.monesterio.pushreceiver.MonesterioPushParseReceiver"
-            android:exported="false">
+        <service
+            android:name=".push.MonesterioFirebaseMessagingService"
+            >
             <intent-filter>
-                <action android:name="com.parse.push.intent.RECEIVE" />
-                <action android:name="com.parse.push.intent.DELETE" />
-                <action android:name="com.parse.push.intent.OPEN" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
-        </receiver>
-
-        <receiver
-            android:name="com.parse.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+        </service>
+        <service
+            android:name=".push.MonesterioFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-
-                <category android:name="com.dime.monesterio" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
-        </receiver>
+        </service>
 
     </application>
 

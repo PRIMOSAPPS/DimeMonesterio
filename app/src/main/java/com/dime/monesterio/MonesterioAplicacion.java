@@ -2,9 +2,6 @@ package com.dime.monesterio;
 
 import android.util.Log;
 
-import com.modulos.libreria.buzonciudadanolibreria.mail.AsyncTaskMailSender;
-import com.modulos.libreria.buzonciudadanolibreria.util.UtilPropiedadesBuzonCiudadano;
-import com.modulos.libreria.dimepoblacioneslibreria.actualizador.AsyncTaskActualizador;
 import com.modulos.libreria.dimepoblacioneslibreria.aplicacion.DimeApplication;
 import com.modulos.libreria.dimepoblacioneslibreria.singleton.SingletonDimePoblaciones;
 
@@ -23,4 +20,5 @@ public class MonesterioAplicacion extends DimeApplication {
         SingletonDimePoblaciones.getInstance().setIdIconoListaSitios(com.modulos.libreria.dimepoblacioneslibreria.R.mipmap.puntos_de_interes);
 
     }
+
 }
